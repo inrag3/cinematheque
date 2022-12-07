@@ -13,10 +13,10 @@
 ActiveRecord::Schema[7.0].define(version: 2022_12_07_090923) do
   create_table "comments", force: :cascade do |t|
     t.text "text"
-    t.integer "users_id"
-    t.integer "contents_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "users_id"
+    t.integer "contents_id"
   end
 
   create_table "content_types", force: :cascade do |t|
@@ -29,10 +29,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_07_090923) do
     t.string "title"
     t.text "description"
     t.decimal "rating"
-    t.integer "genres_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "content_types_id"
+    t.integer "genres_id"
   end
 
   create_table "genres", force: :cascade do |t|
@@ -44,18 +44,17 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_07_090923) do
 
   create_table "rates", force: :cascade do |t|
     t.decimal "rate_value"
-    t.integer "users_id"
-    t.integer "contents_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "users_id"
+    t.integer "contents_id"
   end
 
   create_table "users", force: :cascade do |t|
     t.integer "username"
-    t.integer "watched_id"
-    t.integer "favourite_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "contents_id"
   end
 
   add_foreign_key "comments", "contents", column: "contents_id"
@@ -64,6 +63,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_07_090923) do
   add_foreign_key "contents", "genres", column: "genres_id"
   add_foreign_key "rates", "contents", column: "contents_id"
   add_foreign_key "rates", "users", column: "users_id"
-  add_foreign_key "users", "contents", column: "watched_id"
-  add_foreign_key "users", "contents", column: "favourite_id"
+  add_foreign_key "users", "contents", column: "contents_id"
 end
