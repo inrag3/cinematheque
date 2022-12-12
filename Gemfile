@@ -32,9 +32,6 @@ gem 'uglifier'
 gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'turbolinks'
-gem 'sdoc', '2.4.0'
-gem 'rdoc', '6.5.0'
-gem 'yaml'
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
