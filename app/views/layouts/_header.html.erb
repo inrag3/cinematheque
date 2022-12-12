@@ -1,11 +1,11 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="container">
-    <%= link_to "Cinematheque", './', id: "logo" %>
+    <%= link_to "Cinematheque", root_path, id: "logo" %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Домой",   './' %></li>
-        <li><%= link_to "Обзор",   './browse' %></li>
-        <li><%= link_to "Войти", '#' %></li>
+        <li><%= link_to "Домой", root_path%></li>
+        <li><%= link_to "Обзор", browse_path %></li>
+        <li><%= link_to "Войти", signup_path %></li>
       </ul>
     </nav>
   </div>
