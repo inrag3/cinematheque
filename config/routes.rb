@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   get 'browse' => 'pages#browse'
   get 'about' => 'pages#about'
   get 'signup' => 'users#new'
+
+  resources :users
 end
