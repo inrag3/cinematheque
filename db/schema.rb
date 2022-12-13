@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_13_140445) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_13_145556) do
   create_table "comments", force: :cascade do |t|
     t.text "text"
     t.datetime "created_at", null: false
@@ -56,6 +56,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_13_140445) do
     t.datetime "updated_at", null: false
     t.integer "contents_id"
     t.string "email"
+    t.string "password_digest"
+    t.index ["email"], name: "index_users_on_email", unique: true
   end
 
   add_foreign_key "comments", "contents", column: "contents_id"

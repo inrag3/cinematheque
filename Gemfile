@@ -33,6 +33,7 @@ gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'turbolinks'
 
+gem 'bcrypt'
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
