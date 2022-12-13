@@ -56,4 +56,14 @@ class UserTest < Minitest::Test
     duplicate_user.email = @user.email.upcase
     assert_not duplicate_user.valid?
   end
+
+  def test_blank_password
+    @user.password = @user.password_confirmation = " " * 6
+    assert_not @user.valid?
+  end
+
+  def test_password_length
+    @user.password = @user.password_confirmation = "a" * 5
+    assert_not @user.valid?
+  end
 end
