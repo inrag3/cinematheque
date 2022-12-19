@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_19_133230) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_19_160843) do
   create_table "comments", force: :cascade do |t|
     t.text "text"
     t.datetime "created_at", null: false
@@ -58,6 +58,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_19_133230) do
     t.string "email"
     t.string "password_digest"
     t.string "remember_digest"
+    t.boolean "admin", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 

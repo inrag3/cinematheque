@@ -32,6 +32,8 @@ gem 'uglifier'
 gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'turbolinks'
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
 
 gem 'bcrypt'
 # Use Redis adapter to run Action Cable in production
