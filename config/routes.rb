@@ -11,5 +11,8 @@ Rails.application.routes.draw do
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
 
+  //TODO пофиксить это на DELETE
+  get 'logout' => 'sessions#destroy'
+
   resources :users
 end
