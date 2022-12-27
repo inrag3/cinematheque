@@ -5,9 +5,7 @@
   </form>
   <div class="movies">
     <% if @movies.any? %>
-      <ol class="movies">
-        <%= @movies %>
-      </ol>
+      <%= render 'movies/movie' %>
     <% end %>
   </div>
 
