@@ -17,7 +17,7 @@ class PagesController < ApplicationController
 
     request = Net::HTTP::Get.new(uri.path, {'Content-Type' => 'application/json', "X-API-KEY"=> "8c8e1a50-6322-4135-8875-5d40a5420d86"})
     response = http.request(request)
-    @body = JSON.parse(response.body)
+    @movies = JSON.parse(response.body)
   end
 
   def about
