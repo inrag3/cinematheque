@@ -285,19 +285,6 @@ span.picture {
   justify-content: space-around;
 }
 
-.pagination {
-  width: 100%;
-}
-
-.pagination ul {
-  text-align: center;
-  list-style: none;
-}
-
-.pagination li {
-  display: inline-block;
-}
-
 .movie {
   width: 240px;
   margin: 10px;
@@ -371,4 +358,22 @@ span.picture {
 
 .movie__average--red {
   border: 1px solid red;
+}
+
+.pagination {
+  width: 100%;
+}
+
+.pagination ul {
+  text-align: center;
+  list-style: none;
+}
+
+.pagination li {
+  display: inline-block;
+}
+
+
+.footer {
+  flex: 0 0 auto;
 }

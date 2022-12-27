@@ -12,7 +12,7 @@ class PagesController < ApplicationController
   end
 
   def browse
-    @current_browse_page = params[:page]
+    @current_browse_page = params[:page] || '1'
     p = { :type => 'TOP_250_BEST_FILMS', :page => @current_browse_page}
     @movies = movies_from_params(p)
   end
