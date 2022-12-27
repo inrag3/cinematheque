@@ -8,14 +8,14 @@ module PagesHelper
     end
   end
   def getClassByRate(vote)
-    # if (vote >= 7)
-    #   "green"
-    # elsif (vote > 5)
-    #   "orange"
-    # else
-    #   "red"
-    # end
-    "red"
+
+    if (vote.to_f >= 7)
+      "green"
+    elsif (vote.to_f > 5)
+      "orange"
+    else 
+      "red"
+    end
   end
 
 end

@@ -10,7 +10,7 @@
         <div class="movie__title"><%=film["nameRu"] %></div>
         <div class="movie__category"><%=film["genres"].map{|v| v.map{|_,v| "#{v}"}}.join(' ')%></div>
 
-        <div class="movie__average movie__average--<%=getClassByRate(film["rating"])%>>">
+        <div class="movie__average movie__average--<%=getClassByRate(film["rating"])%>">
          <%=film["rating"]%>
         </div>
       </div>
