@@ -8,6 +8,22 @@
       <%= render 'movies/movie' %>
     <% end %>
   </div>
-
+  <nav aria-label="...">
+    <ul class="pagination">
+      <li class="page-item disabled">
+        <% if (@current_browse_page.to_i - 1) >= 1 %>
+          <%= button_to "Previous", browse_path, method: :get, params: {:page =>(@current_browse_page.to_i - 1).to_s }%>
+        <% end %>
+      </li>
+      <% ([@current_browse_page.to_i - 3, 0].max .. [@current_browse_page.to_i + 1, @movies["pagesCount"] - 1].min).each do |i|%>
+            <li class="page-item">
+              <%= button_to i+1, browse_path, method: :get, params: {:page => i + 1} %>
+            </li>
+      <% end %>
+      <% if (@current_browse_page.to_i + 1) <= @movies["pagesCount"] %>
+        <%= button_to "Next", browse_path, method: :get, params: {:page =>(@current_browse_page.to_i + 1).to_s }%>
+      <% end %>
+    </ul>
+  </nav>
 </div>
 
