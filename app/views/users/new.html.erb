@@ -1,5 +1,5 @@
-<% provide(:title,"Sign up") %>
-<h1>Sign up</h1>
+<% provide(:title,"Регистрация") %>
+<h1 class="h_spacing">Регистрация</h1>
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <%= form_for(@user) do |f| %>
@@ -16,7 +16,7 @@
       <%= f.label :password_confirmation, "Подтвердите пароль"%>
       <%= f.password_field :password_confirmation, class: 'form-control' %>
 
-      <%= f.submit "Создать аккаунт", class: "btn btn-primary" %>
+      <%= f.submit "Создать аккаунт", class: "btn content_btn submit_btn"%>
     <% end %>
   </div>
 </div>
