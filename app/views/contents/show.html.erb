@@ -1,0 +1,53 @@
+<% provide(:title, @content["nameRu"]) %>
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+  <div class="wrapper">
+
+    <div class="wrapper-col-1">
+      <img src=<%=@content["posterUrlPreview"] %> alt=<%= @content["nameRu"]%>>
+    </div>
+
+    <div class="wrapper-col-2">
+      <h1 class="title"><%= @content["nameRu"]%> (<%= @content["year"]%>)</h1>
+      <h6 class="subtitle"> <%=@content["nameOriginal"]%></h6>
+      <p class="description"><%=@content["shortDescription"]%></p>
+
+      <div class="mb-40">
+        <a href="https://www.kinopoisk.ru/film/<%=@content["kinopoiskId"]%>/" class="btn">Смотреть</a>
+      </div>
+
+      <h2>О фильме</h2>
+
+      <ul class="params">
+        <li><span class="text-muted">Год производства</span> <%= @content["nameRu"]%></li>
+        <li><span class="text-muted">Страна</span><%= @content["nameRu"]%></li>
+        <li><span class="text-muted">Жанр</span>
+          <span>
+          <% @content["genres"].each do |f| %>
+          <p><%= f["genre"]%></p>
+          <% end %>
+          </span></li>
+        <li><span class="text-muted">Слоган</span> <span class="text-muted">«Его время пришло»</span></li>
+        <li><span class="text-muted">Режиссер</span> Джеймс Мэнголд</li>
+        <li><span class="text-muted">Время</span> <time class="text-muted">137 мин. / 02:17</time></li>
+      </ul>
+    </div>
+
+    <div class="wrapper-col-3">
+      <span class="rathing-main">7.6</span>
+      <span class="rathing-counts">296 824 оценки</span>
+      <a href="#" class="rathing-details">459 рецензий</a>
+    </div>
+
+  </div>
+  -- /.wrapper --><!
+</div>
+<!-- /.container -->
+
+</body>
