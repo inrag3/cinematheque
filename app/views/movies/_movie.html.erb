@@ -9,9 +9,11 @@
       <div class="movie__info">
         <div class="movie__title"><%=film["nameRu"] %></div>
         <div class="movie__category"><%=film["genres"].map{|v| v.map{|_,v| "#{v}"}}.join(', ')%></div>
-        <div class="movie__average movie__average--<%=get_type_from_rate(film["rating"])%>">
-         <%=film["rating"]%>
-        </div>
+        <% if film["rating"] != "null" %>
+          <div class="movie__average movie__average--<%=get_type_from_rate(film["rating"])%>">
+           <%= film["rating"]  %>
+          </div>
+        <% end %>
       </div>
     </div>
   <% end %>
