@@ -2,15 +2,13 @@
   <% @movies["films"].each do |film|%>
     <div class="movie">
       <div class="movie__cover-inner">
-        <img  src=<%=film["posterUrlPreview"]%> class="movie__cover" alt=<%=film["nameRu"] %>/>
-        <%= link_to content_path, params: {id: film["filmId"]} %>
-        <div class="movie__cover--darkened"></div>
+        <%= button_to(content_path, method: :get, class: "clear-btn", params: {id: film["filmId"] }) do %>
+            <img src=<%=film["posterUrlPreview"]%> class="movie__cover" alt=<%=film["nameRu"] %>/>
+        <% end %>
       </div>
-
       <div class="movie__info">
         <div class="movie__title"><%=film["nameRu"] %></div>
         <div class="movie__category"><%=film["genres"].map{|v| v.map{|_,v| "#{v}"}}.join(', ')%></div>
-
         <div class="movie__average movie__average--<%=get_type_from_rate(film["rating"])%>">
          <%=film["rating"]%>
         </div>
