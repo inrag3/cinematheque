@@ -1,0 +1,11 @@
+<% provide(:title, "Search") %>
+<%= render "shared/search" %>
+<div class="container">
+  <div class="movies">
+    <% if @movies.any? %>
+      <%= render 'movies/movie' %>
+    <% end %>
+  </div>
+  <%= render partial: "shared/pagination", locals: {path: find_path, search: params[:search]} %>
+</div>
+

@@ -1,9 +1,11 @@
 require 'net/https'
 require 'uri'
 require 'json'
+require 'cgi'
 
 class PagesController < ApplicationController
   include PagesHelper
+
   def home
     if logged_in?
       @micropost  = current_user.microposts.build
@@ -12,11 +14,16 @@ class PagesController < ApplicationController
   end
 
   def browse
-    @current_browse_page = params[:page] || '1'
-    p = { :type => 'TOP_250_BEST_FILMS', :page => @current_browse_page}
-    @movies = movies_from_params(p)
+    params[:type] = "TOP_250_BEST_FILMS"
+    @movies = top
   end
 
-  def about
+  def find
+    if params[:search] == ""
+      @movies = top
+    else
+    @movies = movies
+    end
   end
+
 end

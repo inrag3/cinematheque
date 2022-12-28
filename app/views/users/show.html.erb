@@ -1,20 +1,34 @@
 <% provide(:title, @user.username) %>
-<div class="row">
-  <aside class="col-md-4">
-    <section class="user_info">
-      <h1>
-        <%= gravatar_for @user %>
-        <%= @user.username %>
-      </h1>
-    </section>
-  </aside>
-  <div class="col-md-8">
-    <% if @user.microposts.any? %>
-      <h3>Microposts (<%= @user.microposts.count %>)</h3>
-      <ol class="microposts">
-        <%= render @microposts %>
-      </ol>
-      <%= will_paginate @microposts %>
-    <% end %>
+
+<div class="container h-100">
+  <div class="row d-flex justify-content-center align-items-center h-100">
+    <div class="col col-lg-6 mb-4 mb-lg-0">
+      <div class="card mb-3" style="border-radius: .5rem;">
+        <div class="row g-0">
+          <div class="col-md-4 gradient-custom text-center text-white"
+               style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
+            <%= gravatar_for @user%>
+            <i class="far fa-edit mb-5"></i>
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <div class="row pt-1">
+                <div class="col-6 mb-3">
+                  <h6>Email</h6>
+                  <p class="text-muted"><%= @user.email %></p>
+                </div>
+              </div>
+              <div class="row pt-1">
+                <div class="col-6 mb-3">
+                  <h6>Username</h6>
+                  <p class="text-muted"><%= @user.username %></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
+

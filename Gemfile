@@ -31,7 +31,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
-
+gem 'cgi'
 gem 'bcrypt'
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
@@ -74,6 +74,8 @@ end
 group :production do
   gem "pg"
 end
+
+
 
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
