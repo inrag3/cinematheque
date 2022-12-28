@@ -1,31 +1,10 @@
-<% provide(:title, "Browse") %>
-<%= form_tag find_path, method: :get do%>
-  <%= text_field_tag(:search, params[:search])%>
-  <%= submit_tag "Поиск" %>
-<% end %>
+<%= render "shared/search" %>
 <div class="container">
-  <form class="header__content">
-    <input type="text" class="header__search" placeholder="Поиск">
-  </form>
   <div class="movies">
     <% if @movies.any? %>
       <%= render 'movies/movie' %>
     <% end %>
   </div>
-  <div class="pagination">
-    <ul>
-      <li><%= button_to "Previous", browse_path, method: :get,
-                    params: {:page =>(@current_browse_page.to_i - 1).to_s },
-                    class: "btn btn-primary",
-                    disabled: @current_browse_page.to_i - 1 < 1 %></li>
-      <% ([@current_browse_page.to_i - 3, 0].max .. [@current_browse_page.to_i + 1, @movies["pagesCount"] - 1].min).each do |i|%>
-        <li><%= button_to i+1, browse_path, method: :get, params: {:page => i + 1}, class: "btn btn-primary #{i+1 == @current_browse_page.to_i ? "active" : ""}"%></li>
-      <% end %>
-      <li><%= button_to "Next", browse_path, method: :get,
-                    params: {:page =>(@current_browse_page.to_i + 1).to_s },
-                    class: "btn btn-primary",
-                    disabled: (@current_browse_page.to_i + 1) > @movies["pagesCount"]%></li>
-    </ul>
-  </div>
+  <%= render partial: "shared/pagination", locals: {path: browse_path, search: nil} %>
 </div>
 
