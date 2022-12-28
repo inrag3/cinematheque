@@ -4,9 +4,10 @@ Rails.application.routes.draw do
   root 'pages#home'
 
   get 'browse' => 'pages#browse'
-  get 'content' => 'pages#browse'
   get 'about' => 'pages#about'
   get 'signup' => 'users#new'
+  get 'find' => 'pages#find'
+  get 'content' => 'contents#show'
 
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'

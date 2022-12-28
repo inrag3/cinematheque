@@ -2,7 +2,8 @@
   <% @movies["films"].each do |film|%>
     <div class="movie">
       <div class="movie__cover-inner">
-        <img src=<%=film["posterUrlPreview"]%> class="movie__cover" alt=<%=film["nameRu"] %>/>
+        <img  src=<%=film["posterUrlPreview"]%> class="movie__cover" alt=<%=film["nameRu"] %>/>
+        <%= link_to content_path, params: {id: film["filmId"]} %>
         <div class="movie__cover--darkened"></div>
       </div>
 
