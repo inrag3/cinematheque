@@ -6,11 +6,11 @@
 </head>
 <body>
 
-<div class="container">
+<div class="content_container">
   <div class="wrapper">
 
     <div class="wrapper-col-1">
-      <img src=<%=@content["posterUrlPreview"] %> alt=<%= @content["nameRu"]%>>
+      <img src=<%=@content["posterUrlPreview"] %> alt=<%= @content["nameRu"]%> class="content_img">
     </div>
 
     <div class="wrapper-col-2">
@@ -19,35 +19,32 @@
       <p class="description"><%=@content["shortDescription"]%></p>
 
       <div class="mb-40">
-        <a href="https://www.kinopoisk.ru/film/<%=@content["kinopoiskId"]%>/" class="btn">Смотреть</a>
+        <a href="https://www.kinopoisk.ru/film/<%=@content["kinopoiskId"]%>/" class="btn content_btn">Смотреть</a>
       </div>
 
       <h2>О фильме</h2>
 
       <ul class="params">
-        <li><span class="text-muted">Год производства</span> <%= @content["nameRu"]%></li>
-        <li><span class="text-muted">Страна</span><%= @content["nameRu"]%></li>
+        <li><span class="text-muted">Год производства</span> <%= @content["year"]%></li>
+        <li><span class="text-muted">Страна</span><%= @content["countries"].map{|v| v.map{|_,v| "#{v}"}}.join(', ')%></li>
         <li><span class="text-muted">Жанр</span>
           <span>
-          <% @content["genres"].each do |f| %>
-          <p><%= f["genre"]%></p>
-          <% end %>
+          <%=@content["genres"].map{|v| v.map{|_,v| "#{v}"}}.join(', ')%>
           </span></li>
-        <li><span class="text-muted">Слоган</span> <span class="text-muted">«Его время пришло»</span></li>
-        <li><span class="text-muted">Режиссер</span> Джеймс Мэнголд</li>
-        <li><span class="text-muted">Время</span> <time class="text-muted">137 мин. / 02:17</time></li>
+        <li><span class="text-muted">Слоган</span> <span><%= @content["slogan"]%></span></li>
+        <li><span class="text-muted">Время</span> <time><%= @content["filmLength"]%> мин.</time></li>
       </ul>
     </div>
 
     <div class="wrapper-col-3">
-      <span class="rathing-main">7.6</span>
-      <span class="rathing-counts">296 824 оценки</span>
-      <a href="#" class="rathing-details">459 рецензий</a>
+      <span class="rathing-main"><%= @content["ratingKinopoisk"]%></span>
+      <span class="rathing-counts">Оценок: <%= @content["ratingKinopoiskVoteCount"]%></span>
     </div>
 
   </div>
-  -- /.wrapper --><!
+  <div>
+    <h2>Описание</h2>
+    <h3><%= @content["description"]%></h3>
+  </div>
 </div>
-<!-- /.container -->
-
 </body>
