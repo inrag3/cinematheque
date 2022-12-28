@@ -1,8 +1,11 @@
 <% provide(:title, "Browse") %>
+<%= form_tag find_path, method: :get do%>
+  <%= text_field_tag(:search, params[:search])%>
+  <%= submit_tag "Поиск" %>
+<% end %>
 <div class="container">
   <form class="header__content">
     <input type="text" class="header__search" placeholder="Поиск">
-    
   </form>
   <div class="movies">
     <% if @movies.any? %>
