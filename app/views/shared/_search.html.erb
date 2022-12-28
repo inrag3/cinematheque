@@ -1,5 +1,5 @@
 <% provide(:title, "Browse") %>
-<%= form_tag find_path, method: :get do%>
-  <%= text_field_tag(:search, params[:search])%>
-  <%= submit_tag "Поиск" %>
+<%= form_tag find_path, class: "right", method: :get do%>
+  <%= text_field_tag :search, params[:search], class: "form_text" %>
+  <%= submit_tag "Поиск", class: "form_submit" %>
 <% end %>

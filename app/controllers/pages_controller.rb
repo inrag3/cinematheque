@@ -19,7 +19,11 @@ class PagesController < ApplicationController
   end
 
   def find
+    if params[:search] == ""
+      @movies = top
+    else
     @movies = movies
+    end
   end
 
 end

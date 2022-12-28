@@ -603,7 +603,7 @@ h3{
   transition: all 200ms ease-in-out;
 }
 
-.list_btn:active{
+.list_btn_active{
   color: black;
   background-color: white;
 }
@@ -615,4 +615,27 @@ h3{
 
 .h_spacing{
   letter-spacing: 0.5px;
+}
+
+.black {
+  background: black;
+}
+
+.right {
+  text-align: right;
+}
+
+.form_text{
+  color: black;
+  padding-left: 7px;
+  width: 20%;
+  line-height: 1.7em;
+}
+
+.form_submit{
+  background: none;
+  border-color: white;
+  color: #fff;
+  width: 10%;
+  line-height: 1.7em;
 }
